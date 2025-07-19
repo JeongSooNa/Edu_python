@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="title">
+        <h1>NEWS Trands</h1>
+      </div>
+    </br>
+      <div class="contents">
+        <input type="text">
+        <input type="button" value="BUTTON">
+      </div>
+    </div>
+    <div id="result"></div>
+
+    <script>
+      function run() {
+        fetch("/news_data")
+          .then((response) => response.text())
+          .then((text) => {
+            document.getElementById("result").innerHTML = text;
+          });
+      }
+    </script>
+  </body>
+</html>
